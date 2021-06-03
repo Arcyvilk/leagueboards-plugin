@@ -1,0 +1,17 @@
+{
+  "name": "LeagueBoards.net Plugin",
+  "description": "Replaces the links from old League forums with LeagueBoards mirror link.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["plugin.js"]
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "http://*.leagueoflegends.com/*"
+  ],
+  "icons": {
+    "48": "/icons/ico-48.png"
+  }
+}

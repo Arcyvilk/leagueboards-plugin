@@ -1,5 +1,5 @@
-function customizeUrl(url) {
-  const host = url.host?.replace('www', 'na');
+function customizeLegacyForumsUrl(url) {
+  const host = url.host?.replace('www', 'na').replace('forums.', '');
   const server = host.replace('.leagueoflegends.com', '');
   const pathname = url.pathname?.replace('board', server) ?? '';
   const search = url.search?.replace('p', 't') ?? '';
@@ -12,13 +12,13 @@ function listener(details) {
   const url = new URL(details.url);
   if (url && url.pathname.startsWith('/board'))
     return {
-      redirectUrl: customizeUrl(url)
+      redirectUrl: customizeLegacyForumsUrl(url)
     };
   else return {};
 }
 
 browser.webRequest.onBeforeRequest.addListener(
   listener,
-  {urls: ["http://*.leagueoflegends.com/board/*", "https://*.leagueoflegends.com/*"]},
+  {urls: ["http://*.leagueoflegends.com/board/*"]},
   ["blocking"]
 );

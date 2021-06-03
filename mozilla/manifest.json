@@ -5,7 +5,7 @@
   "version": "1.0",
   "homepage_url": "https://github.com/Arcyvilk/leagueboards-plugin",
   "icons": {
-    "48": "icons/ico-48.ico"
+    "48": "icons/ico-48.png"
   },
   "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
   "background": {
